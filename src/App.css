@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.nav-bar {
+  display: flex;
+  height: 82px;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #050531;
+}
+
+.logo {
+  display: flex;
+  padding: 0 15px;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  padding: 0px 15px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.nav-item:hover {
+  transition: 300ms;
+  color: #ff7e06;
+  text-decoration: underline;
+}
+
+/* Todo lo que este en medio acá */
+.home-container {
+  margin: 30px;
+  text-align: center;
+  color: #ff7e06;
+}
+
+.general-container {
+  min-height: calc(100vh - 60px);
+}
+
+.products-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.products-title {
+  color: #ff7e06;
+}
+
+.new-product-modal {
+  text-align: center;
+}
+
+.filtered-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filtered-buttons > button {
+  margin-right: 15px;
+}
+
+.products-table {
+  margin: 30px;
+}
+
+
+.add-product {
+  color: #050531;
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+.add-product:hover {
+  transition: 200ms;
+  color: #ff7e06;
+}
+
+.ant-modal-title {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #050531;
+  color: white;
+  height: 60px;
+}

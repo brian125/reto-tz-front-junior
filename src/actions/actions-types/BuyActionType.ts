@@ -1,0 +1,6 @@
+export enum BuyActionType {
+  LOADING = "LOADING",
+  LOAD_SUCCESS = "LOAD_SUCCESS",
+  LOAD_FAILURE = "LOAD_FAILURE",
+  CREATE_BUY = "CREATE_BUY",
+}

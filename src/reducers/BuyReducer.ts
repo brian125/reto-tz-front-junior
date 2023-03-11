@@ -1,6 +1,7 @@
 import { IBuy } from '../models/IBuy.model';
 import { BuyActionType } from '../actions/actions-types/BuyActionType';
 import { IStateBuy } from '../models/IStateBuy.model';
+import { IPaginationBuy } from '../models/IPaginationBuy.model';
 
 const initialState: IStateBuy = {
   isLoading: false,
@@ -9,11 +10,26 @@ const initialState: IStateBuy = {
 };
 
 export type ActionType =
+  | { type: "LOADING"; payload: IPaginationBuy }
+  | { type: "LOAD_SUCCESS"; payload: IPaginationBuy }
   | { type: "LOAD_FAILURE"; payload: string }
   | { type: "CREATE_BUY"; payload: IBuy };
 
 const BuyReducer = (state = initialState, action: ActionType) => {
   switch (action.type) {
+    
+    case BuyActionType.LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case BuyActionType.LOAD_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        buys: action.payload,
+      };
+    
     case BuyActionType.LOAD_FAILURE:
       return {
         ...state,

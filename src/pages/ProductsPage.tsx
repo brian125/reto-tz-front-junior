@@ -58,7 +58,7 @@ const HomePage: React.FC = () => {
     }
 
     setOpen(false);
-    form.resetFields();
+    formDoBuy.resetFields();
   };
 
   const handleCancelBuy = () => {

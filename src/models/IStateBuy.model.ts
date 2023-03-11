@@ -1,6 +1,7 @@
-import { IBuy } from './IBuy.model';
+import { IPaginationBuy } from './IPaginationBuy.model';
+
 export interface IStateBuy {
   isLoading: boolean;
-  buys?: IBuy;
+  buys?: IPaginationBuy;
   error: string;
 }

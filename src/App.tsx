@@ -5,6 +5,7 @@ import GeneralLayout from "./layout/GeneralLayout";
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import Footer from "./components/Footer";
+import BuyPage from './pages/BuyPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<GeneralLayout />}>
               <Route path="" element={<HomePage />} />
               <Route path="products" element={<ProductsPage />} />
+              <Route path="buys" element={<BuyPage />} />
             </Route>
           </Routes>
         </div>

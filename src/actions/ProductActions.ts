@@ -53,8 +53,6 @@ export const productDeleteError=(error:string)=>{
 }
 
 export const addProductToShoppingCartSuccess=(productToAdd:IProduct)=>{
-    console.log("PAYLOAD DEL ACTION", productToAdd);
-    
     return {
         type:ProductActionType.ADD_PRODUCT_TO_SHOPPING,
         payload:productToAdd

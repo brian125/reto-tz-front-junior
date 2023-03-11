@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { IBuy } from "../models/IBuy.model";
 import { IRootReducer } from "../models/IRootReducer.model";
 import { IStateProduct } from "../models/IStateProduct.model";
+import { createBuy } from "../app/middleware/payloadBuys";
 
 const HomePage: React.FC = () => {
   const [visible, setVisible] = useState(false); // PARA EL DEL PRODUCTO
@@ -35,9 +36,26 @@ const HomePage: React.FC = () => {
     form.resetFields();
   };
 
-  const handleSubmitBuy = (values: IBuy) => {
+  const handleSubmitBuy = (values: any) => {
     console.log("Los valores de la compra", values);
-    createBuy(dispatch, values);
+
+    let productsArrayKeys = Object.keys(values);
+
+    for (let index = 3; index < productsArrayKeys.length; index++) {
+      const quantityDefintive = values[`${productsArrayKeys[index]}`];
+      console.log("QUANTITY R U THERE ?", quantityDefintive);
+
+      const buyObject = {
+        id: values.id,
+        idType: values.idType,
+        clientName: values.clientName,
+        productId: productsArrayKeys[index],
+        quantity: quantityDefintive?.quantity,
+      };
+      console.log("Objeto final de la compra", buyObject);
+
+      createBuy(dispatch, buyObject);
+    }
 
     setOpen(false);
     form.resetFields();
@@ -213,7 +231,7 @@ const HomePage: React.FC = () => {
                   <h3>{product.name}</h3>
                   <Form.Item
                     label="Cantidad"
-                    name={[product.id, 'quantity']}
+                    name={[product.id, "quantity"]}
                     preserve
                     rules={[
                       {
